@@ -10,6 +10,7 @@ public:
 	If(spOp op);
 	virtual ~If();
 	void invoke(RpnStack &values);
+	spOp &getOp() { return op; }
 
 private:
 	spOp op;

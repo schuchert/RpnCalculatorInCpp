@@ -11,10 +11,13 @@
 #include "Sum.h"
 #include "Drop.h"
 #include "Dup.h"
+#include "NDup.h"
 #include "LessThen.h"
 #include "GreaterThen.h"
 #include "If.h"
+#include "IfElse.h"
 #include "Nop.h"
+#include "Swap.h"
 
 OperatorFactory::OperatorFactory() {
 	addOperator("+", spOp(new Add));
@@ -28,8 +31,12 @@ OperatorFactory::OperatorFactory() {
 	addOperator("sum", spOp(new Sum));
 	addOperator("drop", spOp(new Drop));
 	addOperator("dup", spOp(new Dup));
+	addOperator("ndup", spOp(new NDup));
 	addOperator("nop", spOp(new Nop));
+	addOperator("swap", spOp(new Swap));
 	addOperator("if", spOp(new If(getOperatorNamed("nop"))));
+	addOperator("ifElse", spOp(new IfElse(getOperatorNamed("nop"), getOperatorNamed("nop"))));
+
 }
 
 OperatorFactory::~OperatorFactory() {
