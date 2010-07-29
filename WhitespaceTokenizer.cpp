@@ -1,7 +1,5 @@
 #include "WhitespaceTokenizer.h"
 
-#include <algorithm>
-
 WhitespaceTokenizer::WhitespaceTokenizer() {
 }
 
