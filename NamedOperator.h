@@ -12,6 +12,7 @@ public:
 	virtual ~NamedOperator();
 	void invoke(RpnStack &values);
 	const std::string& getName() const { return name; }
+	spOp getOp() { return op; }
 
 private:
 	const std::string name;

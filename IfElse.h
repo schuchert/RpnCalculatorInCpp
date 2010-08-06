@@ -2,18 +2,19 @@
 #ifndef IFELSE_H_
 #define IFELSE_H_
 
-#include "Operator.h"
+#include "CompositeOperator.h"
 #include "spOp.h"
 
-class IfElse: public Operator {
+class IfElse: public CompositeOperator {
 public:
+	IfElse();
 	IfElse(spOp ifOp, spOp elseOp);
 	virtual ~IfElse();
 	void invoke(RpnStack &values);
+	CompositeOperator &getElseBlock() { return elseBlock; }
 
 private:
-	spOp ifOp;
-	spOp elseOp;
+	CompositeOperator elseBlock;
 };
 
 #endif

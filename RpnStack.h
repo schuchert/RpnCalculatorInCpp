@@ -17,4 +17,7 @@ private:
 	RpnStack& operator=(const RpnStack&);
 };
 
+#include <iosfwd>
+std::ostream& operator<<(std::ostream& stream, const RpnStack &stack);
+
 #endif

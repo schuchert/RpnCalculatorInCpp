@@ -9,6 +9,7 @@ public:
 	PushConstant(int value);
 	virtual ~PushConstant();
 	void invoke(RpnStack &values);
+	int getValue() { return value; }
 
 private:
 	const int value;
